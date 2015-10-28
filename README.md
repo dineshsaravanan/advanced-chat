@@ -37,11 +37,7 @@ and add your own IP address/hostname if required, i.e.:
 
 (the port is defined in the <code>app.set('port', process.env.PORT || 3000);</code> section.)
 
-Please also update <strong>public/js/client.js</strong>:
-<pre>var socket = io.connect("192.168.56.102:3000");</pre>
-with the right IP address/hostname.
-
-To install <code>npm install && bower install</code> and to launch run <code>npm start</code>.
+To install <code>npm install</code> and to launch run <code>npm start</code>.
 
 ### Whisper
 
