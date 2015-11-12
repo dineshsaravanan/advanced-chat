@@ -1,4 +1,11 @@
-var another = require("./another");
+import React from "react";
+import ReactDOM from "react-dom";
+import Application from "./components/Application";
 
-another.yell();
-console.log(1);
+require("./styles/main.styl");
+
+const mountNode = document.getElementById("root");
+
+ReactDOM.render(<Application />, mountNode, () => {
+  console.info("Application rendered!")
+});
