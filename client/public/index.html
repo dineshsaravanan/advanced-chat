@@ -5,7 +5,85 @@
 		<!-- <link rel="stylesheet" href="main.css"/> -->
 	</head>
 	<body>
-		<!-- <script src="main.js"></script> -->
-		<h1>A very empty html file</h1>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+	<script id="login-template" type="text/x-handlebars-template">
+	  <div class="entry">
+	    <h1>Welcome to the chat, please write your username</h1>
+	    <div>
+	    	<input type="text" id="username" value="{{username}}" />
+	    </div>
+	    <input type="button" id="login" value="login" />
+	    {{#if error}}
+	    	<h2>{{error}}</h2>
+	    {{/if}}
+	  </div>
+	</script>
+
+	<script id="logged-template" type="text/x-handlebars-template">
+	  <div>
+	    <h1>Welcome {{username}}</h1>
+	    <div>
+	    	<h2>Create a room</h2>
+	    	<input type="text" id="newroomname" />
+	    	<input type="button" id="createroom" value="Create" />
+	    </div>
+	  </div>
+		<div id="online-people"></div>
+		<div id="rooms"></div>
+		<div id="footer"></div>
+	</script>
+
+	<script id="rooms-template" type="text/x-handlebars-template">
+		<h3>There are {{count}} room/s available</h3>
+	  <ul>
+	    {{#each rooms}}
+	    	<li id="room-{{id}}">
+	    		<div>
+	    			<h2>{{name}}</h2>
+	    			<input type="button" class="join-room-btn" data-room="{{id}}" value="Join" />
+	    			<div class="people-list"></div>
+	    			<div class="messages"></div>
+			    	<input type="text" class="sendmessagetext" />
+			    	<input type="button" class="sendmessage" value="Send" />
+	    		</div>
+	    	</li>
+	    {{/each}}
+	  </ul>
+	</script>
+
+	<script id="messages-template" type="text/x-handlebars-template">
+	  <ul>
+	    {{#each messages}}
+	    	<li><span class="time">[{{time}}]</span><span class="person">{{person}}: </span><span class="message">{{message}}</span></li>
+	    {{/each}}
+	  </ul>
+	</script>
+
+	<script id="people-online-template" type="text/x-handlebars-template">
+		<h1>{{title}}</h2>
+	  <ul>
+	    {{#each people}}
+	    	<li>{{name}}</li>
+	    {{/each}}
+	  </ul>
+	</script>
+
+	<script id="statuses-template" type="text/x-handlebars-template">
+	  <ul>
+	    {{#each statuses}}
+	    	<li>{{message}}</li>
+	    {{/each}}
+	  </ul>
+	</script>
+
+	<div id="page">
+		<div id="main_content"></div>
+	</div>
+
+	<script src="main.js"></script>
 	</body>
 </html>
