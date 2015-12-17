@@ -214,7 +214,7 @@ io.sockets.on("connection", function (socket) {
 	});
 
 	socket.on("getOnlinePeople", function(fn) {
-                fn({people: people});
+              fn && fn({people: people});
         });
 
 	socket.on("countryUpdate", function(data) { //we know which country the user is from

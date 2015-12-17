@@ -2,10 +2,40 @@
 <html>
 	<head>
 		<meta charset="UTF-8"/>
-		<!-- <link rel="stylesheet" href="main.css"/> -->
+		<link rel="stylesheet" href="css/main.css"/>
 	</head>
 	<body>
 		<!-- <script src="main.js"></script> -->
-		<h1>A very empty html file</h1>
+		<h1>A Very Friendly Chat</h1><a id="close" href="#">Close</a>
+		<div id="login" style="display:none">
+			Name : <input type="text" id="name"></br>
+			Room : <input type="text" id="room">
+			</br>
+			<input type="button" id="chatNow" value="Chat Now">
+		</div>
+		<div id="chatWindow" style="display:none;">
+			<div id="chat" style="float:left">
+				<h2>The Room</h2>
+				<div id="messages" style="background-color: #fff;color:#000;">
+					<div id="status">
+
+					</div>
+				</div></br>
+				<input type="text" id="message">
+				<input type="button" id="send" value="send">
+			</div>
+			<div id="users" style="float:right;background-color: #fff;color:#000">
+				<ul id="userList"></ul>
+			</div>
+		</div>
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="socket.io/socket.io.js"></script>
+	<script src="js/chat.js"></script>
+	<script type="text/javascript">
+		window.onload = function () {
+			var socket = io.connect();
+			Login.init(socket);
+		};
+	</script>
 	</body>
 </html>
