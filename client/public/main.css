@@ -1,0 +1,48 @@
+body {
+	font-size: 20px;
+}
+
+* {
+	font-size: inherit;
+}
+
+.app-area {
+	margin: 20px auto;
+	width: 500px;
+}
+
+.room-info {
+	position: relative;
+}
+
+.room-info input {
+	width: 350px;
+	display: block;
+	margin: 10px;
+}
+
+.room-info .join-container {
+	text-align: center;
+}
+
+.room-list {
+	display: none;
+}
+
+.chat-room {
+	display: none;
+}
+
+.typing-prompt {
+
+	color: #666;
+	margin: 10px;
+}
+
+.chat-entry {
+
+}
+
+.chat-entry .chat-sender {
+	font-weight: bold;
+}

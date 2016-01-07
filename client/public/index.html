@@ -2,10 +2,32 @@
 <html>
 	<head>
 		<meta charset="UTF-8"/>
-		<!-- <link rel="stylesheet" href="main.css"/> -->
+		<link rel="stylesheet" href="main.css" />
 	</head>
 	<body>
-		<!-- <script src="main.js"></script> -->
-		<h1>A very empty html file</h1>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="main.js"></script>
+		<div class='app-area'>
+			<div class='room-info'>
+				<input type='text' placeholder='Username' class='user-name' />
+				<input type='text' placeholder='Device Name' class='user-device' />
+				<div class='join-container'>
+					<input type='button' value='Join Server' class='primary-button join-server' />
+				</div>
+			</div>
+			<div class='room-list'>
+				<div class='create-room-block'>
+					<input type='text' class='room-name' />
+					<input class='create-room' type='button' value='Create Room' />
+				</div>
+				<div class='empty-msg'>No rooms available</div>
+			</div>
+			<div class='chat-room'>
+				<div class='history-block'></div>
+				<div class='typing-prompt'></div>
+				<input type='text' class='chat-msg' placeholder='type' />
+			</div>
+		</div>
 	</body>
 </html>
