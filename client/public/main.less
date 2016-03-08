@@ -1,0 +1,48 @@
+
+// Layout Params
+@viewMargin: 20px;
+
+// Colors
+@borderColor: #000;
+@viewColor: #a4adb1;
+
+
+
+body, html {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+// Views
+.view {
+  margin: @viewMargin;
+  padding: @viewMargin;
+  border: 1px solid @borderColor;
+  font-family: "Bitter", serif;
+  background-color: @viewColor;
+
+  // View Group
+  .view-welcome {
+
+  }
+  .view-create {
+
+  }
+  .view-listrooms {
+
+  }
+  .view-privatemessage {
+
+  }
+
+
+  // Panel Group
+  .panel {
+    border: 1px solid @borderColor;
+    padding: @viewMargin/2;
+  }
+}

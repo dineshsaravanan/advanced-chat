@@ -2,10 +2,79 @@
 <html>
 	<head>
 		<meta charset="UTF-8"/>
-		<!-- <link rel="stylesheet" href="main.css"/> -->
+    <link href='https://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" href="main.css">
 	</head>
 	<body>
-		<!-- <script src="main.js"></script> -->
-		<h1>A very empty html file</h1>
+
+
+	<div class="view view-welcome">
+    <h1>Welcome to ChatMatic 1.0</h1>
+    <p>Please enter your username to join the server</p>
+    <input type="text" id="username-field">
+    <button class="btn" id="btn-set-user">Join Server</button>
+  </div>
+
+
+  <div class="view view-create">
+    <h1>Create a Room</h1>
+    <p>Please enter your room name</p>
+    <input type="text" id="roomname-field">
+    <button class="btn" id="btn-create-room">Create Room</button>
+
+  </div>
+
+  <div class="view view-listrooms">
+    <h1>List Rooms</h1>
+  </div>
+
+  <div class="view view-allusers">
+    <h1>All Users</h1>
+    <ul>
+      <li>
+        <span>Username</span> <span>Direct Message</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="view view-privatemessage">
+    <h1>Send Private Message</h1>
+    <div class="chatbox" id="chatbox-private">
+      <ul>
+        <li>Messages Go here</li>
+      </ul>
+    </div>
+    <textarea></textarea>
+    <button class="btn" id="btn-send-private">
+      Send Private Message
+      <button>
+  </div>
+
+  <div class="view view-room row">
+    <div class="panel panel-messages ten-columns">
+      <div class="chatbox" id="chatbox-room">
+        <ul>
+          <li>Messages Go here</li>
+        </ul>
+      </div>
+      <div class="messagebox ten-columns">
+        <textarea></textarea>
+      </div>
+    </div>
+    <div class="panel panel-users two-columns">
+      <ul>
+        <li>I am a user</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+  <script src="socket.io/lib/socket.io.js"></script>
+  <script src="main.js"></script>
+
+
 	</body>
 </html>
